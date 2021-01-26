@@ -10,6 +10,13 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
+# Modify default IP
+sed -i 's/192.168.1.1/192.168.1.3/g' package/base-files/files/bin/config_generate
+# Add luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall  package/lean
+
+
+
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
